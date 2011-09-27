@@ -29,7 +29,7 @@ ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$reset_color%}"
 function prompt_char() {
   git branch >/dev/null 2>/dev/null && echo "%{$fg[green]%}±%{$reset_color%}" && return
   hg root >/dev/null 2>/dev/null && echo "%{$fg_bold[red]%}☿%{$reset_color%}" && return
-  echo "%{$fg[cyan]%}◯%{$reset_color%}"
+  echo ""
 }
 
 # Colors vary depending on time lapsed.
@@ -85,7 +85,7 @@ function git_time_since_commit() {
 }
 
 PROMPT='
-%{$fg[blue]%}%m%{$reset_color%} 福 %{$fg[cyan]%}%~ %{$reset_color%}$(git_prompt_short_sha)$(git_prompt_info)
-%{$fg[red]%}%!%{$reset_color%} $(prompt_char) : '
+%{$fg[blue]%}%n@%m%{$reset_color%} %{$fg[cyan]%}%~ %{$reset_color%}$(git_prompt_short_sha)$(git_prompt_info)
+$(prompt_char) : '
 
 RPROMPT='${return_status}$(git_time_since_commit)$(git_prompt_status)%{$reset_color%}'
