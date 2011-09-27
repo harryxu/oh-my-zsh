@@ -26,7 +26,7 @@ ZSH_THEME="smt"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git pip)
 
-if [ -f /usr/local/bin/virtualenvwrapper.sh]
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]
 then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
