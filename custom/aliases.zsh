@@ -9,3 +9,4 @@ alias lal="ls --color=always -la"
 alias l='ls -CF'
 alias xopen='xdg-open'
 
+alias tmch="tmux attach -t"
