@@ -1,7 +1,3 @@
-fpath=($ZSH/plugins/bundler $fpath)
-autoload -U compinit
-compinit -i
-
 alias be="bundle exec"
 alias bi="bundle install"
 alias bl="bundle list"
@@ -10,7 +6,7 @@ alias bu="bundle update"
 
 # The following is based on https://github.com/gma/bundler-exec
 
-bundled_commands=(cap capify cucumber foreman guard heroku nanoc rackup rails rainbows rake rspec ruby shotgun spec spork thin unicorn unicorn_rails)
+bundled_commands=(annotate cap capify cucumber foreman guard heroku nanoc rackup rainbows rake rspec ruby shotgun spec spork thin thor unicorn unicorn_rails)
 
 ## Functions
 
@@ -41,6 +37,6 @@ for cmd in $bundled_commands; do
   alias $cmd=bundled_$cmd
 
   if which _$cmd > /dev/null 2>&1; then
-        compdef _$cmd bundled_$cmd
+        compdef _$cmd bundled_$cmd=$cmd
   fi
 done
