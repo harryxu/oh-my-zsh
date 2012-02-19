@@ -10,3 +10,5 @@ alias l='ls -CF'
 alias xopen='xdg-open'
 
 alias tmch="tmux attach -t"
+
+alias cunzip="unzip -O CP936"
