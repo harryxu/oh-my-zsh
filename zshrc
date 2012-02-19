@@ -24,13 +24,12 @@ DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git pip git-flow)
+plugins=(autojump vi-mode git pip git-flow)
 
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]
 then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
-source /etc/profile
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
