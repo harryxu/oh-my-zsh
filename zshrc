@@ -24,7 +24,7 @@ DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump vi-mode git pip git-flow)
+plugins=(autojump vi-mode git pip git-flow rvm)
 
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]
 then
@@ -36,3 +36,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=~/bin:~/opt/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
 umask 002
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM 
