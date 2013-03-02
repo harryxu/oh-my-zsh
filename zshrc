@@ -24,12 +24,9 @@ DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump vi-mode git pip git-flow rvm)
+plugins=(vi-mode git pip git-flow rvm)
 
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]
-then
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
+# oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
@@ -39,4 +36,27 @@ umask 002
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM 
+if [ -d /usr/local/mysql/bin ]
+then
+    PATH=$PATH:/usr/local/mysql/bin
+fi
+
+# This loads RVM 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  
+
+# autojump
+[[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && source ~/.autojump/etc/profile.d/autojump.zsh
+
+# virtualenvwrapper
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]
+then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
+# This line make autojump tab completion work.
+# If you get a message like:
+#   zsh compinit: insecure directories, run compaudit for list.
+#   Ignore insecure directories and continue [y] or abort compinit [n]? y
+# just run 'compaudit | xargs chmod g-w'
+# see: http://www.snowfrog.net/2009/11/19/cygwin-zsh-zsh-compinit-insecure-directories/
+autoload -U compinit; compinit
