@@ -47,12 +47,6 @@ fi
 # autojump
 [[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && source ~/.autojump/etc/profile.d/autojump.zsh
 
-# virtualenvwrapper
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]
-then
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
-
 # This line make autojump tab completion work.
 # If you get a message like:
 #   zsh compinit: insecure directories, run compaudit for list.
@@ -60,3 +54,9 @@ fi
 # just run 'compaudit | xargs chmod g-w'
 # see: http://www.snowfrog.net/2009/11/19/cygwin-zsh-zsh-compinit-insecure-directories/
 autoload -U compinit; compinit
+
+# virtualenvwrapper
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]
+then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
