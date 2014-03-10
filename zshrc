@@ -27,7 +27,7 @@ DISABLE_CORRECTION="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(vi-mode git git-extras osx pip git-flow rvm vagrant)
+plugins=(vi-mode git git-extras osx pip git-flow rvm vagrant composer laravel4)
 
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
