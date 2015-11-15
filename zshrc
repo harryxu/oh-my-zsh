@@ -27,7 +27,7 @@ DISABLE_CORRECTION="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(vi-mode git git-extras osx pip git-flow rvm vagrant composer laravel4)
+plugins=(vi-mode git git-extras osx pip git-flow rvm vagrant composer laravel4 autojump)
 
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -44,12 +44,6 @@ then
     PATH=$PATH:/usr/local/mysql/bin
 fi
 
-# This loads RVM 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  
-
-# autojump
-[[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && source ~/.autojump/etc/profile.d/autojump.zsh
-
 # This line make autojump tab completion work.
 # If you get a message like:
 #   zsh compinit: insecure directories, run compaudit for list.
@@ -58,8 +52,5 @@ fi
 # see: http://www.snowfrog.net/2009/11/19/cygwin-zsh-zsh-compinit-insecure-directories/
 autoload -U compinit; compinit
 
-# virtualenvwrapper
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]
-then
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
+export EDITOR=vim
+export GIT_EDITOR=vim
