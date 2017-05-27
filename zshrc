@@ -27,10 +27,13 @@ DISABLE_CORRECTION="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(vi-mode autojump git git-extras osx pip git-flow rvm vagrant composer laravel4)
+plugins=(vi-mode autojump git git-extras osx pip git-flow rvm vagrant composer laravel4 golang)
+
 
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+
+compinit -u
 
 # Customize to your needs...
 export PATH=~/bin:~/opt/bin:/usr/local/php5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin::$PATH
@@ -54,3 +57,9 @@ autoload -U compinit; compinit
 
 export EDITOR=vim
 export GIT_EDITOR=vim
+
+# GOPATH
+if hash go 2>/dev/null; then
+    export PATH=$PATH:$(go env GOPATH)/bin
+    export GOPATH=$(go env GOPATH)
+fi
