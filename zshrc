@@ -32,6 +32,8 @@ plugins=(vi-mode autojump git git-extras osx pip git-flow rvm vagrant composer l
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
+compinit -u
+
 # Customize to your needs...
 export PATH=~/bin:~/opt/bin:/usr/local/php5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin::$PATH
 
@@ -44,9 +46,6 @@ then
     PATH=$PATH:/usr/local/mysql/bin
 fi
 
-# This loads RVM 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  
-
 # This line make autojump tab completion work.
 # If you get a message like:
 #   zsh compinit: insecure directories, run compaudit for list.
@@ -55,10 +54,13 @@ fi
 # see: http://www.snowfrog.net/2009/11/19/cygwin-zsh-zsh-compinit-insecure-directories/
 autoload -U compinit; compinit
 
-# virtualenvwrapper
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]
-then
-    source /usr/local/bin/virtualenvwrapper.sh
+export EDITOR=vim
+export GIT_EDITOR=vim
+
+# GOPATH
+if hash go 2>/dev/null; then
+    export PATH=$PATH:$(go env GOPATH)/bin
+    export GOPATH=$(go env GOPATH)
 fi
 
 # ANDROID_HOME
