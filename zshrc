@@ -27,7 +27,7 @@ DISABLE_CORRECTION="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(vi-mode autojump git git-extras osx pip git-flow rvm vagrant composer laravel4)
+plugins=(vi-mode autojump git git-extras osx pip git-flow rvm vagrant composer laravel4 golang)
 
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -59,4 +59,20 @@ autoload -U compinit; compinit
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]
 then
     source /usr/local/bin/virtualenvwrapper.sh
+fi
+
+# ANDROID_HOME
+if [ -d ~/dev/android-sdk ]
+then
+    export ANDROID_HOME=~/dev/android-sdk
+    export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools"
+fi
+
+
+export PATH="$HOME/.yarn/bin:$PATH"
+
+# GOPATH
+if hash go 2>/dev/null; then
+    export PATH=$PATH:$(go env GOPATH)/bin
+    export GOPATH=$(go env GOPATH)
 fi
